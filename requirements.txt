@@ -1,0 +1,6 @@
+# Runtime
+google-adk==2.14.1   # Agent Development Kit (pulls in google-genai for Gemini)
+requests==2.34.2     # HTTP calls to Open-Meteo
+
+# Development
+pytest==9.2.0        # Test runner (TDD per laws.md)
