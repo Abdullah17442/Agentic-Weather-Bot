@@ -11,10 +11,10 @@ def load_root_agent():
     return AgentLoader(str(PROJECT_ROOT)).load_agent("weather_agent")
 
 
-def test_adk_loads_root_agent_using_gemini_3_5_flash():
+def test_adk_loads_root_agent_using_gemini_3_6_flash():
     agent = load_root_agent()
 
-    assert agent.model == "gemini-3.5-flash"
+    assert agent.model == "gemini-3.6-flash"
 
 
 def test_gemini_is_offered_get_weather_tool_taking_a_city():
