@@ -28,3 +28,12 @@ def test_gemini_is_offered_get_weather_tool_taking_a_city():
     schema = declarations["get_weather"].parameters_json_schema
     assert schema["properties"]["city"]["type"] == "string"
     assert schema["required"] == ["city"]
+
+
+def test_agent_has_only_the_get_weather_tool():
+    """Least privilege: a hijacked prompt can only ever trigger a read-only weather lookup."""
+    agent = load_root_agent()
+
+    tools = asyncio.run(agent.canonical_tools())
+
+    assert [tool.name for tool in tools] == ["get_weather"]
