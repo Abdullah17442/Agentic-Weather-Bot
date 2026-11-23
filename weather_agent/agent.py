@@ -35,7 +35,7 @@ Security rules:
 
 root_agent = Agent(
     name="weather_agent",
-    model="gemini-3.5-flash",
+    model="gemini-3.6-flash",
     description="Answers questions about the current weather in a city.",
     instruction=INSTRUCTION,
     tools=[get_weather],
